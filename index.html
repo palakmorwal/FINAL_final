@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#00aeef">
+<meta name="description" content="FINAL_final, Issue 02: browse the making of issue 01 on a computer from 1998.">
+<title>FINAL_final — Issue 02</title>
+<link rel="preload" href="assets/fonts/comic-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Pixel icon sprite. Strict CMYK: cyan #00aeef, magenta #ec008c, yellow #fff200, black #000 (+ paper white). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <!-- selected-icon tint (magenta over the icon's own pixels) -->
+  <filter id="f-sel" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feFlood flood-color="#ec008c" flood-opacity=".6"/>
+    <feComposite in2="SourceAlpha" operator="in"/>
+    <feComposite in2="SourceGraphic" operator="over"/>
+  </filter>
+  <!-- solid CMYK silhouettes for the FINAL_final glitch ghosts -->
+  <filter id="f-c" color-interpolation-filters="sRGB"><feFlood flood-color="#00aeef"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+  <filter id="f-m" color-interpolation-filters="sRGB"><feFlood flood-color="#ec008c"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+  <filter id="f-y" color-interpolation-filters="sRGB"><feFlood flood-color="#fff200"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+  <filter id="f-k" color-interpolation-filters="sRGB"><feFlood flood-color="#000000"/><feComposite in2="SourceAlpha" operator="in"/></filter>
+
+  <!-- 32x32 desktop / explorer icons -->
+  <symbol id="i-pc" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M5 1h22v19H5z"/>
+    <path fill="#fff200" d="M6 2h20v17H6z"/>
+    <path fill="#fff" d="M6 2h20v1H6zM6 2h1v17H6z"/>
+    <path d="M8 4h16v12H8z"/>
+    <path fill="#00aeef" d="M9 5h14v10H9z"/>
+    <path d="M11 7h8v1h-8z"/>
+    <path fill="#fff" d="M11 8h8v4h-8z"/>
+    <path fill="#ec008c" d="M22 17h2v1h-2z"/>
+    <path d="M11 20h10v2H11z"/>
+    <path d="M2 23h28v7H2z"/>
+    <path fill="#fff200" d="M3 24h26v5H3z"/>
+    <path fill="#fff" d="M3 24h26v1H3z"/>
+    <path fill="none" stroke="#000" stroke-dasharray="1 1" d="M5 25.5h22M5 27.5h22"/>
+  </symbol>
+  <symbol id="i-bin" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M7 7h18l-2 23H9z"/>
+    <path fill="#fff" d="M8 8h16l-2 21H10z"/>
+    <path fill="none" stroke="#00aeef" d="M12.5 9v19M16.5 9v19M20.5 9v19"/>
+    <path fill="none" stroke="#00aeef" stroke-dasharray="1 1" d="M9 12.5h14M9 16.5h14M10 20.5h12M10 24.5h12"/>
+    <path d="M5 4h22v4H5z"/>
+    <path fill="#fff200" d="M6 5h20v2H6z"/>
+    <path fill="#fff" d="M6 5h20v1H6z"/>
+    <path fill="#ec008c" d="M15 14h3v1h1v2h1v1h-2v-1h-1v-2h-2zM12 18h2v2h4v1h1v1h-6v-1h-1zM20 19h1v2h-1z"/>
+  </symbol>
+  <symbol id="i-ie" viewBox="0 0 32 32">
+    <path fill="none" stroke="#000" stroke-width="4" d="M3 22C5 9 21 1 29 5"/>
+    <path fill="none" stroke="#fff200" stroke-width="2" d="M3 22C5 9 21 1 29 5"/>
+    <text x="15.5" y="27" text-anchor="middle" font-family="'Times New Roman',Times,serif" font-style="italic" font-weight="bold" font-size="30" fill="#00aeef" stroke="#000" stroke-width="1">e</text>
+    <path fill="none" stroke="#000" stroke-width="3" d="M27 8C30 16 24 25 12 29"/>
+    <path fill="none" stroke="#fff200" stroke-width="1.5" d="M27 8C30 16 24 25 12 29"/>
+  </symbol>
+  <symbol id="i-ff" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M2 6h10l2 2h16v20H2z"/>
+    <path fill="#fff200" d="M3 7h8l2 2h16v4H3z"/>
+    <path d="M6 3h20v10H6z"/>
+    <path fill="#fff" d="M7 4h18v9H7z"/>
+    <path fill="#ec008c" d="M9 6h12v1H9zM9 8h8v1H9zM9 10h10v1H9z"/>
+    <path d="M2 12h28v16H2z"/>
+    <path fill="#fff200" d="M3 13h26v14H3z"/>
+    <path fill="#fff" d="M3 13h26v1H3zM3 13h1v14H3z"/>
+    <path fill="#ec008c" d="M13 16h6v2h-4v2h3v2h-3v3h-2z"/>
+  </symbol>
+  <symbol id="i-folder" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M2 6h10l2 2h16v20H2z"/>
+    <path fill="#fff200" d="M3 7h8l2 2h16v4H3z"/>
+    <path d="M2 12h28v16H2z"/>
+    <path fill="#fff200" d="M3 13h26v14H3z"/>
+    <path fill="#fff" d="M3 13h26v1H3zM3 13h1v14H3z"/>
+  </symbol>
+  <symbol id="i-note" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M6 4h20v27H6z"/>
+    <path fill="#fff" d="M7 5h18v25H7z"/>
+    <path fill="#00aeef" d="M7 5h18v3H7z"/>
+    <path fill="#ec008c" d="M9 11h14v1H9zM9 14h14v1H9zM9 17h14v1H9zM9 20h14v1H9zM9 23h9v1H9z"/>
+    <path d="M9 1h2v6H9zM14 1h2v6h-2zM19 1h2v6h-2z"/>
+    <path fill="#fff200" d="M10 2h1v4h-1zM15 2h1v4h-1zM20 2h1v4h-1z"/>
+  </symbol>
+  <symbol id="i-file" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M6 1h14l7 7v23H6z"/>
+    <path fill="#fff" d="M7 2h12v7h7v21H7z"/>
+    <path fill="#fff200" d="M20 3l5 5h-5z"/>
+    <path d="M20 2h1v6h5v1h-6z"/>
+    <path fill="var(--band,#000)" d="M9 14h15v9H9z"/>
+  </symbol>
+  <symbol id="i-pdf" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M6 1h14l7 7v23H6z"/>
+    <path fill="#fff" d="M7 2h12v7h7v21H7z"/>
+    <path d="M20 2h1v6h5v1h-6z"/>
+    <path fill="#ec008c" d="M9 13h15v9H9z"/>
+    <path fill="#fff" d="M10 15h3v1h1v2h-1v1h-2v2h-1zM11 16v2h2v-2zM15 15h3v1h1v4h-1v1h-3zM16 16v4h2v-4zM20 15h3v1h-2v2h2v1h-2v2h-1z"/>
+    <path fill="#00aeef" d="M9 25h15v1H9zM9 27h10v1H9z"/>
+  </symbol>
+  <symbol id="i-img" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M6 1h14l7 7v23H6z"/>
+    <path fill="#fff" d="M7 2h12v7h7v21H7z"/>
+    <path d="M20 2h1v6h5v1h-6z"/>
+    <path d="M8 11h17v16H8z"/>
+    <path fill="#00aeef" d="M9 12h15v14H9z"/>
+    <path fill="#fff200" d="M18 14h4v4h-4z"/>
+    <path fill="#ec008c" d="M9 22h3v-2h2v-2h2v2h2v2h3v-1h2v5H9z"/>
+  </symbol>
+  <symbol id="i-txt" viewBox="0 0 32 32" shape-rendering="crispEdges">
+    <path d="M6 1h14l7 7v23H6z"/>
+    <path fill="#fff" d="M7 2h12v7h7v21H7z"/>
+    <path d="M20 2h1v6h5v1h-6z"/>
+    <path d="M9 12h14v1H9zM9 15h14v1H9zM9 18h14v1H9zM9 21h14v1H9zM9 24h8v1H9z"/>
+  </symbol>
+  <symbol id="i-warn" viewBox="0 0 32 32">
+    <path d="M16 1.5L31 29.5H1z"/>
+    <path fill="#fff200" d="M16 5L27.6 27H4.4z"/>
+    <path shape-rendering="crispEdges" d="M14 11h4v4h-1v5h-2v-5h-1zM14 22h4v3h-4z"/>
+  </symbol>
+  <symbol id="i-info" viewBox="0 0 32 32">
+    <path fill="#fff" stroke="#000" d="M16 2.5a12 11 0 1 1-6 20.6L4.5 29l2.6-7.8A12 11 0 0 1 16 2.5z"/>
+    <path fill="#00aeef" shape-rendering="crispEdges" d="M15 6h3v3h-3zM13 11h5v9h2v2h-7v-2h2v-7h-2z"/>
+  </symbol>
+  <symbol id="i-err" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="14" fill="#ec008c" stroke="#000"/>
+    <path fill="none" stroke="#fff" stroke-width="3.2" d="M10.5 10.5l11 11M21.5 10.5l-11 11"/>
+  </symbol>
+  <!-- 16x16 small icons -->
+  <symbol id="s-logo" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <path d="M1 1h6v6H1z"/>
+    <path fill="#fff200" d="M8 1h6v6H8z"/>
+    <path fill="#00aeef" d="M1 8h6v6H1z"/>
+    <path fill="#ec008c" d="M8 8h6v6H8z"/>
+  </symbol>
+  <symbol id="s-drive" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <path d="M1 5h14v7H1z"/>
+    <path fill="#fff200" d="M2 6h12v5H2z"/>
+    <path fill="#fff" d="M2 6h12v1H2z"/>
+    <path d="M3 9h7v1H3z"/>
+    <path fill="#ec008c" d="M12 9h1v1h-1z"/>
+  </symbol>
+  <symbol id="s-up" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <path d="M1 3h5l1 1h8v10H1z"/>
+    <path fill="#fff" d="M2 5h12v8H2z"/>
+    <path d="M7 6h2v1h1v1h1v1H9v3H7V9H5V8h1V7h1z"/>
+  </symbol>
+  <symbol id="s-power" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <path d="M2 1h12v9H2zM5 11h6v2H5zM1 13h14v2H1z"/>
+    <path fill="#fff200" d="M3 2h10v7H3zM2 14h12v1H2z"/>
+    <path fill="#00aeef" d="M4 3h8v5H4z"/>
+  </symbol>
+  <!-- title bar glyphs -->
+  <symbol id="g-min" viewBox="0 0 8 8" shape-rendering="crispEdges"><path d="M0 6h6v2H0z"/></symbol>
+  <symbol id="g-max" viewBox="0 0 9 9" shape-rendering="crispEdges"><path fill-rule="evenodd" d="M0 0h9v9H0zM1 2v6h7V2z"/></symbol>
+  <symbol id="g-res" viewBox="0 0 9 9" shape-rendering="crispEdges"><path fill-rule="evenodd" d="M2 0h7v6H8V2H3v1H2zM0 3h7v6H0zM1 5v3h5V5z"/></symbol>
+  <symbol id="g-x" viewBox="0 0 8 7" shape-rendering="crispEdges"><path d="M0 0h2v1H0zM6 0h2v1H6zM1 1h2v1H1zM5 1h2v1H5zM2 2h4v1H2zM3 3h2v1H3zM2 4h4v1H2zM1 5h2v1H1zM5 5h2v1H5zM0 6h2v1H0zM6 6h2v1H6z"/></symbol>
+  <symbol id="g-down" viewBox="0 0 7 4" shape-rendering="crispEdges"><path d="M0 0h7v1H0zM1 1h5v1H1zM2 2h3v1H2zM3 3h1v1H3z"/></symbol>
+  <!-- Instagram.exe toolbar icons, 24x24 -->
+  <symbol id="n-home" viewBox="0 0 24 24"><path fill="#fff" stroke="#000" stroke-width="1.6" stroke-linejoin="miter" d="M3 12.5L12 4l9 8.5h-2.5V20H14v-5h-4v5H5.5v-7.5z"/></symbol>
+  <symbol id="n-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="#fff" stroke="#000" stroke-width="2"/><path stroke="#000" stroke-width="3.4" d="M14.5 14.5l6 6"/><path stroke="#00aeef" stroke-width="1.4" d="M7 9a3 3 0 0 1 3-3" fill="none"/></symbol>
+  <symbol id="n-cam" viewBox="0 0 24 24"><path fill="#fff" stroke="#000" stroke-width="1.5" d="M2.5 7.5h5l1.5-2.5h6l1.5 2.5h5v12h-19z"/><circle cx="12" cy="13.5" r="4" fill="#00aeef" stroke="#000" stroke-width="1.5"/><circle cx="12" cy="13.5" r="1.6" fill="#fff"/></symbol>
+  <symbol id="n-heart" viewBox="0 0 24 24"><path fill="var(--heart,#fff)" stroke="#000" stroke-width="1.5" d="M12 20.5L3.6 12.2A4.8 4.8 0 0 1 12 6.6a4.8 4.8 0 0 1 8.4 5.6z"/></symbol>
+  <symbol id="n-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4.2" fill="#fff" stroke="#000" stroke-width="1.6"/><path fill="#fff" stroke="#000" stroke-width="1.6" d="M4 21c0-5 3.6-7.4 8-7.4s8 2.4 8 7.4z"/></symbol>
+  <symbol id="t-grid" viewBox="0 0 24 24" shape-rendering="crispEdges"><path d="M6 6h2v2H6zM11 6h2v2h-2zM16 6h2v2h-2zM6 11h2v2H6zM11 11h2v2h-2zM16 11h2v2h-2zM6 16h2v2H6zM11 16h2v2h-2zM16 16h2v2h-2z"/></symbol>
+  <symbol id="t-list" viewBox="0 0 24 24" shape-rendering="crispEdges"><path d="M4 6h2v2H4zM8 6h12v2H8zM4 11h2v2H4zM8 11h12v2H8zM4 16h2v2H4zM8 16h12v2H8z"/></symbol>
+  <symbol id="t-pin" viewBox="0 0 24 24"><path fill="none" stroke="#000" stroke-width="1.8" d="M12 21s-6.5-6.4-6.5-11a6.5 6.5 0 0 1 13 0c0 4.6-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="#000" stroke-width="1.8"/></symbol>
+  <symbol id="t-tag" viewBox="0 0 24 24"><path fill="none" stroke="#000" stroke-width="1.8" d="M4 5h5l3-2 3 2h5v15H4z"/><circle cx="12" cy="10.5" r="2.6" fill="none" stroke="#000" stroke-width="1.6"/><path fill="none" stroke="#000" stroke-width="1.6" d="M7.5 18c.6-2.6 2.4-3.8 4.5-3.8s3.9 1.2 4.5 3.8"/></symbol>
+</defs>
+</svg>
+
+<div id="screen">
+  <ul id="desktop" aria-label="Desktop icons"></ul>
+</div>
+
+<nav id="startmenu" aria-label="Start menu" hidden></nav>
+
+<footer id="taskbar">
+  <button id="start" class="btn" aria-haspopup="true" aria-expanded="false" aria-controls="startmenu"><svg class="s16"><use href="#s-logo"/></svg>Start</button>
+  <div id="tasks" role="toolbar" aria-label="Open windows"></div>
+  <div id="tray"><time id="clock"></time></div>
+</footer>
+
+<div id="boot" role="dialog" aria-modal="true" aria-labelledby="boot-title" aria-describedby="boot-msg">
+  <div class="win active boot-win">
+    <div class="titlebar"><span id="boot-title" class="title">FINAL_final.exe</span>
+      <span class="tbtns" aria-hidden="true"><span class="tbtn"><svg class="g-min"><use href="#g-min"/></svg></span><span class="tbtn"><svg class="g-max"><use href="#g-max"/></svg></span><span class="tbtn gap"><svg class="g-x"><use href="#g-x"/></svg></span></span>
+    </div>
+    <p id="boot-msg" aria-live="polite">Initializing…</p>
+    <div class="boot-row">
+      <div id="boot-bar" class="sunken-thin" role="progressbar" aria-label="Loading FINAL_final" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+      <button id="boot-cancel" class="btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<noscript><p class="noscript">FINAL_final requires JavaScript. Please insert a browser from after 1998.</p></noscript>
+
+<script src="content.js"></script>
+<script src="js/util.js"></script>
+<script src="js/wm.js"></script>
+<script src="js/apps/viewers.js"></script>
+<script src="js/apps/explorer.js"></script>
+<script src="js/apps/scatter.js"></script>
+<script src="js/apps/computer.js"></script>
+<script src="js/apps/notepad.js"></script>
+<script src="js/apps/instagram.js"></script>
+<script src="js/desktop.js"></script>
+</body>
+</html>
